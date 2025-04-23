@@ -30,44 +30,66 @@ const Footer = () => {
 
         <section className="flex flex-col text-center space-y-6">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">Quick To</h1>
-          <ul className="text-center space-y-2 text-md md:text-lg">
-            <li>Home</li>
-            <li>Skills</li>
-            <li>Projects</li>
+          <ul className="text-center text-md md:text-lg">
+            <li>
+              <a href="#" className="underline-hover">Home</a>
+            </li>
+            <li>
+              <a href="#" className="underline-hover">Skills</a>
+            </li>
+            <li>
+              <a href="#" className="underline-hover">Projects</a>
+            </li>
           </ul>
         </section>
 
         <section className="flex flex-col text-center space-y-6">
           <h1 className="text-3xl font-semibold">Contact</h1>
-          <ul className="text-center space-y-2 text-md md:text-lg">
-            <li>LinkedIn</li>
-            <li>Github</li>
-            <li>Telegram</li>
+          <ul className="text-center text-md md:text-lg">
+            <li>
+              <a href="#" className="underline-hover">LinkedIn</a>
+            </li>
+            <li>
+              <a href="#" className="underline-hover">Github</a>
+            </li>
+            <li>
+              <a href="#" className="underline-hover">Telegram</a>
+            </li>
           </ul>
         </section>
 
         <section className="flex flex-col text-center space-y-6">
           <h1 className="text-3xl font-semibold">Tool Used</h1>
-          <ul className="flex flex-col items-center space-y-2 text-md md:text-lg">
-            <li className="flex items-center space-x-2">
-              <span>React</span>
-              <FaReact/>
+          <ul className="flex flex-col space-y-2 items-center text-md md:text-lg">
+            <li className="underline-hover">
+              <a href="#" className="flex items-center space-x-2">
+                <span>React</span>
+                <FaReact/>
+              </a>
             </li>
-            <li className="flex items-center space-x-2">
-              <span>TypeScript</span>
-              <BiLogoTypescript/>
+            <li className="underline-hover">
+              <a href="#" className="flex items-center space-x-2">
+                <span>TypeScript</span>
+                <BiLogoTypescript/>
+              </a>
             </li>
-            <li className="flex items-center space-x-2">
-              <span>Tailwind CSS</span>
-              <RiTailwindCssFill />
+            <li className="underline-hover">
+              <a href="#" className="flex items-center space-x-2">
+                <span>Tailwind CSS</span>
+                <RiTailwindCssFill />
+              </a>
             </li>
-            <li className="flex items-center space-x-2">
-              <span>Framer Motion</span>
-              <TbBrandFramerMotion />
+            <li className="underline-hover">
+              <a href="#" className="flex items-center space-x-2">
+                <span>Framer Motion</span>
+                <TbBrandFramerMotion />
+              </a>
             </li>
-            <li className="flex items-center space-x-2">
-              <span>Figma</span>
-              <CgFigma />
+            <li className="underline-hover">
+              <a href="#" className="flex items-center space-x-2">
+                <span>Figma</span>
+                <CgFigma />
+              </a>
             </li>
           </ul>
         </section>
@@ -75,7 +97,7 @@ const Footer = () => {
 
       <aside className="flex space-x-2 justify-center bg-slate-900 py-4">
         <span>Built with love & inspired by</span>
-        <button className="flex items-center space-x-2">
+        <button className="flex items-center space-x-2 cursor-pointer">
           <FaYoutube className="text-xl text-red-600" />
           <span className="text-blue-400 font-semibold">webdecoded</span>
         </button>
