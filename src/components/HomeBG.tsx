@@ -65,11 +65,11 @@ const HomeBG = () => {
           ease: 'easeInOut'
         }}
         className="absolute top-1/2 transform -translate-y-1/2 z-0
-          w-[320px] h-[320px]
+          w-[340px] h-[340px]
           sm:w-[360px] sm:h-[360px]
           md:w-[440px] md:h-[440px]
           lg:w-[512px] lg:h-[512px]
-          right-[-100px] sm:right-[-80px] md:right-10 lg:right-60"
+          right-[-90px] sm:right-[-80px] md:right-10 lg:right-60"
       >
         <HeroContainer />
       </motion.div>
