@@ -1,14 +1,20 @@
+import NavBar from "./components/NavBar"
+import Home from "./pages/Home"
 
 
 const App = () => {
   return (
-    <>
-      <nav></nav>
+    <div className="space-grotesk">
+      <nav>
+        <NavBar />
+      </nav>
 
-      <main></main>
+      <main>
+        <Home />
+      </main>
 
       <footer></footer>
-    </>
+    </div>
   )
 }
 
