@@ -4,13 +4,15 @@ import projectList from '../../projects.json'
 
 type TabsType = {
   title: string
+  key: "web" | "uxui" | "mobile"
 }
 
 type ProjectListType = {
   id: number
   title: string,
+  category: "web" | "uxui" | "mobile"
   image: string,
-  date: string,
+  date: Date,
   host: string
   desc: string
   link: string
@@ -18,15 +20,21 @@ type ProjectListType = {
 
 const Projects = () => {
 
-  const [activeTab, setActiveTab] = useState<string>('Web Dev')
+  const [activeTab, setActiveTab] = useState<"web" | "uxui" | "mobile">('web')
 
   const tabs: TabsType[] = [
-    { title: "Web Dev" },
-    { title: "UX/UI" },
-    { title: "Mobile" }
+    { title: "Web Dev", key: "web" },
+    { title: "UX/UI", key: "uxui" },
+    { title: "Mobile", key: "mobile" }
   ]
 
-  const typedProjects = projectList as ProjectListType[]
+  const typedProjects: ProjectListType[] = projectList.map(project => ({
+    ...project,
+    date: project.date ? new Date(project.date) : new Date(),
+    category: project.category as "web" | "uxui" | "mobile"
+  }))
+
+  const fitlerProject = typedProjects.filter(project => project.category === activeTab)
 
   return (
     <div
@@ -49,11 +57,11 @@ const Projects = () => {
           <li key={index}>
             <button
               type="button"
-              onClick={() => setActiveTab(tab.title)}
+              onClick={() => setActiveTab(tab.key)}
               className={`rounded-full font-semibold duration-300 ease-in-out cursor-pointer border
                 text-md md:text-lg lg:text-xl
                 px-5 py-1.5 md:px-12 md:py-3 lg:px-20 lg:py-4
-                ${activeTab === tab.title
+                ${activeTab === tab.key
                   ? "bg-gradient-to-r from-red-600 via-blue-700 to-purple-700 shadow-md"
                   : "bg-black/10 hover:bg-white/20"}`}
             >
@@ -63,7 +71,7 @@ const Projects = () => {
         )}
       </ul>
 
-      <GridBox projectList={typedProjects} />
+      <GridBox projectList={fitlerProject} />
     </div>
   )
 }

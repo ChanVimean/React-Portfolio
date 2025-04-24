@@ -2,8 +2,9 @@
   {
     "id": 1,
     "title": "Sabay News Clone",
+    "category": "web",
     "image": "firstProject.png",
-    "date": "March 12 2025",
+    "date": "March 12 2024",
     "host": "Vercel",
     "desc": "My first project when I started explore web tech",
     "link": "https://first-front-end-sandy.vercel.app"
@@ -11,19 +12,41 @@
   {
     "id": 2,
     "title": "Electronic Store",
-    "image": "",
-    "date": "",
+    "category": "web",
+    "image": "thirdProject.png",
+    "date": "January 24 2025",
     "host": "Vercel",
-    "desc": "",
+    "desc": "React project with JSON Server",
     "link": ""
   },
   {
     "id": 3,
-    "title": "Electronic Store",
-    "image": "",
-    "date": "",
+    "title": "Movie Stream",
+    "category": "web",
+    "image": "secondProject.png",
+    "date": "February 10 2025",
     "host": "Vercel",
-    "desc": "",
-    "link": ""
+    "desc": "A react mimick in pure JavaScript also one of my university project",
+    "link": "https://movie-stream-gilt-two.vercel.app"
+  },
+  {
+    "id": 4,
+    "title": "Haha Movie",
+    "category": "web",
+    "image": "forthProject.png",
+    "date": "February 25 2025",
+    "host": "Vercel",
+    "desc": "Next JS Full-Stack",
+    "link": "https://hana-anime.vercel.app"
+  },
+  {
+    "id": 5,
+    "title": "React Portfolio",
+    "category": "web",
+    "image": "fifthProject.png",
+    "date": "April 2025",
+    "host": "Vercel",
+    "desc": "React TypeScript",
+    "link": "https://react-portfolio-two-khaki.vercel.app"
   }
 ]
