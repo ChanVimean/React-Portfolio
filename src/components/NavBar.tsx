@@ -25,7 +25,7 @@ const NavBar = () => {
           </li>
         </ul>
 
-        <button className="hidden md:block px-6 py-2 cursor-pointer bg-blue-400 hover:bg-blue-500 active:bg-blue-300 duration-150 ease-in-out">
+        <button className="hidden md:block custom-blue-btn">
           Contact
         </button>
       </menu>

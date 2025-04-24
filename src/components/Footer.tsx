@@ -108,10 +108,17 @@ const Footer = () => {
 
       <aside className="flex space-x-2 justify-center bg-slate-900 py-4">
         <span>Built with love & inspired by</span>
-        <button className="flex items-center space-x-2 cursor-pointer">
+        <a
+          href="https://youtu.be/hYv6BM2fWd8?si=04ONubsLH5ZhWmOq"
+          target="_blank"
+          rel="noopener noreferer"
+          className="flex items-center space-x-2 cursor-pointer"
+        >
           <FaYoutube className="text-xl text-red-600" />
-          <span className="text-blue-400 font-semibold">webdecoded</span>
-        </button>
+          <span className="font-semibold text-blue-400 hover:text-blue-500 active:text-blue-300">
+            webdecoded
+          </span>
+        </a>
       </aside>
 
     </div>

@@ -1,5 +1,6 @@
 import Footer from "./components/Footer"
 import NavBar from "./components/NavBar"
+import Contact from "./pages/Contact"
 import Home from "./pages/Home"
 import Skill from "./pages/Skill"
 
@@ -14,6 +15,7 @@ const App = () => {
       <main>
         <Home />
         <Skill />
+        <Contact />
       </main>
 
       <footer className="relative">
