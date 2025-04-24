@@ -10,20 +10,22 @@ import {
 } from "../components/ui/form";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
-import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import emailjs from "emailjs-com";
+
+const maxMessageLength: number = 200;
 
 const formSchema = z.object({
-  firstName: z.string().min(3, "Required"),
-  lastName: z.string().min(3, "Required"),
+  firstName: z.string().min(1, "Required"),
+  lastName: z.string().min(1, "Required"),
   email: z.string().email("Invalid Email"),
-  password: z.string().min(8, "Min 8 Characters"),
-  message: z.string().min(1, "Required"),
+  title: z.string().min(1, "Required"),
+  message: z.string().min(1, "Required").max(maxMessageLength, "Too long"),
+  time: z.string(),
 });
 
-const Contact = () => {
+type ContactFormValues = z.infer<typeof formSchema>;
 
-  const [showPassword, setShowPassowrd] = useState<boolean>(true)
+const Contact = () => {
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -31,12 +33,46 @@ const Contact = () => {
       firstName: "",
       lastName: "",
       email: "",
-      password: "",
+      title: "",
       message: "",
+      time: ""
     },
   });
 
-  const onSubmite = () => {};
+  const messageValue = form.watch("message");
+  const messageLength = messageValue?.length || 0;
+  const remaining = maxMessageLength - messageLength;
+
+  const onSubmite = async (data: ContactFormValues) => {
+    // ? Update Message Length
+    const currentTime = new Date().toLocaleDateString();
+    const fullData = {...data, time: currentTime};
+
+    const templateParams = {
+      name: `${fullData.firstName} ${fullData.lastName}`,
+      email: fullData.email,
+      title: fullData.title,
+      message: fullData.message,
+      time: fullData.time
+    };
+
+    try {
+      const result = await emailjs.send(
+        "service_gyckshl", // ! Service ID
+        "template_q5cqqcf", // ! Template ID
+        templateParams,
+        "9r04oOFnJ4rkt5Hhm" // ! API Keys: Public Key
+      );
+
+      console.log("Email sent:", result.text);
+      form.reset();
+      alert("Custom success");
+    } catch (error) {
+      console.error("Email send failed", error);
+      alert("Failed to send message. Try again later.")
+    }
+
+  };
 
   return (
     <div
@@ -61,7 +97,7 @@ const Contact = () => {
         >
           <h1 className="text-3xl font-semibold">Get In Touch</h1>
 
-          {/* 1st Row */}
+          {/* 1st: Name -> Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -71,7 +107,7 @@ const Contact = () => {
                   <FormLabel>First Name</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600"
+                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
                       placeholder="First Name"
                       {...field}
                     />
@@ -87,7 +123,7 @@ const Contact = () => {
                   <FormLabel>Last Name</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600"
+                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
                       placeholder="Last Name"
                       {...field}
                     />
@@ -97,18 +133,18 @@ const Contact = () => {
             />
           </div>
 
-          {/* 2nd Row */}
+          {/* 2nd: Title & Email -> Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
-              name="email"
+              name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Title</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600"
-                      placeholder="example@gmail.com"
+                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      placeholder="Title"
                       {...field}
                     />
                   </FormControl>
@@ -117,33 +153,23 @@ const Contact = () => {
             />
             <FormField
               control={form.control}
-              name="password"
+              name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <div className="relative">
-                      <Input
-                        className="bg-white/80 text-black placeholder-gray-600"
-                        placeholder="password"
-                        type={showPassword ? "password" : "text"}
-                        {...field}
-                      />
-                      <button
-                        type="button"
-                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                        onClick={() => setShowPassowrd(prev => !prev)}
-                      >
-                        {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                      </button>
-                    </div>
+                    <Input
+                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      placeholder="example@gmail.com"
+                      {...field}
+                    />
                   </FormControl>
                 </FormItem>
               )}
             />
           </div>
 
-          {/* Email - Textarea */}
+          {/* 3rd: Message - Textarea */}
           <FormField
             control={form.control}
             name="message"
@@ -151,11 +177,18 @@ const Contact = () => {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea
-                    className="bg-white/80 text-black placeholder-gray-600"
-                    placeholder="Your message..."
-                    {...field}
-                  />
+                  <div>
+                    <Textarea
+                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      placeholder="Your message..."
+                      {...field}
+                    />
+                    <p className={`text-sm text-right mt-1
+                      ${remaining < 0 ? "text-amber-500" : "text-gray-300"}`}
+                    >
+                      {messageLength}/{maxMessageLength}
+                    </p>
+                  </div>
                 </FormControl>
               </FormItem>
             )}

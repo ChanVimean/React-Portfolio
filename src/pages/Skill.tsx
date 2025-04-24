@@ -43,7 +43,7 @@ const Skill = () => {
         I use to shape the digital experience I imagine.
       </p>
 
-      <Carousel className="w-full lg:w-1/2">
+      <Carousel className="w-2/3 md:w-5/6 lg:max-w-screen-lg">
         <CarouselContent>
           {skillTree.map(skill =>
             <CarouselItem

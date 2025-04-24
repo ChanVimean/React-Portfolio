@@ -8,7 +8,7 @@ import Skill from "./pages/Skill"
 
 const App = () => {
   return (
-    <div className="space-grotesk">
+    <div className="space-grotesk w-full h-auto overflow-hidden">
       <nav className="relative">
         <NavBar />
       </nav>

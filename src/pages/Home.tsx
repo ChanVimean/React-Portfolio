@@ -32,9 +32,9 @@ const Home = () => {
           design, code, and motion into sleek digital experiences
           that are out of this world.
         </p>
-        <button className="flex items-center space-x-2 font-semibold text-3xl">
+        <button className="contactButton">
           <span>Let's Connect</span>
-          <FaArrowRight />
+          <FaArrowRight className="iconButton" />
         </button>
       </article>
     </div>
