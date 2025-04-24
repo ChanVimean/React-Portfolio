@@ -4,9 +4,46 @@ import { FaReact, FaYoutube } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
 import { TbBrandFramerMotion } from "react-icons/tb"
 import Subscribe from "./Subscribe"
+import { SiShadcnui } from "react-icons/si"
+import { JSX } from "react"
 
+
+interface toolsType {
+  id: number
+  title: string,
+  icon?: JSX.Element
+}
+
+interface contactType extends toolsType {
+  link: string
+}
+interface quickToType extends toolsType {
+  link: string
+}
 
 const Footer = () => {
+
+  const quickTo: quickToType[] = [
+    { id: 1, title: "Home", link: "#" },
+    { id: 2, title: "Skills", link: "#" },
+    { id: 3, title: "Projects", link: "#" }
+  ]
+
+  const contacts: contactType[] = [
+    { id: 1, title: "LinkedIn", link: "#" },
+    { id: 2, title: "Github", link: "#" },
+    { id: 3, title: "Telegram", link: "#" }
+  ]
+
+  const tools: toolsType[] = [
+    { id: 1, title: "React", icon: <FaReact/> },
+    { id: 2, title: "TypeScript", icon: <BiLogoTypescript /> },
+    { id: 3, title: "Tailwind CSS", icon: <RiTailwindCssFill /> },
+    { id: 4, title: "Framer Motion", icon: <TbBrandFramerMotion /> },
+    { id: 5, title: "Shadcn ui", icon: <SiShadcnui /> },
+    { id: 6, title: "Figma", icon: <CgFigma /> }
+  ]
+
   return (
     <div className="relative w-full bg-cyan-950">
 
@@ -31,66 +68,40 @@ const Footer = () => {
         <section className="flex flex-col text-center space-y-6">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">Quick To</h1>
           <ul className="text-center text-md md:text-lg">
-            <li>
-              <a href="#" className="underline-hover">Home</a>
-            </li>
-            <li>
-              <a href="#" className="underline-hover">Skills</a>
-            </li>
-            <li>
-              <a href="#" className="underline-hover">Projects</a>
-            </li>
+            {quickTo.map(nav =>
+              <li key={nav.id}>
+                <a href={nav.link} className="underline-hover">
+                  {nav.title}
+                </a>
+              </li>
+            )}
           </ul>
         </section>
 
         <section className="flex flex-col text-center space-y-6">
           <h1 className="text-3xl font-semibold">Contact</h1>
           <ul className="text-center text-md md:text-lg">
-            <li>
-              <a href="#" className="underline-hover">LinkedIn</a>
-            </li>
-            <li>
-              <a href="#" className="underline-hover">Github</a>
-            </li>
-            <li>
-              <a href="#" className="underline-hover">Telegram</a>
-            </li>
+          {contacts.map(contact =>
+              <li key={contact.id}>
+                <a href={contact.link} className="underline-hover">
+                  {contact.title}
+                </a>
+              </li>
+            )}
           </ul>
         </section>
 
         <section className="flex flex-col text-center space-y-6">
           <h1 className="text-3xl font-semibold">Tool Used</h1>
           <ul className="flex flex-col space-y-2 items-center text-md md:text-lg">
-            <li className="underline-hover">
-              <a href="#" className="flex items-center space-x-2">
-                <span>React</span>
-                <FaReact/>
-              </a>
-            </li>
-            <li className="underline-hover">
-              <a href="#" className="flex items-center space-x-2">
-                <span>TypeScript</span>
-                <BiLogoTypescript/>
-              </a>
-            </li>
-            <li className="underline-hover">
-              <a href="#" className="flex items-center space-x-2">
-                <span>Tailwind CSS</span>
-                <RiTailwindCssFill />
-              </a>
-            </li>
-            <li className="underline-hover">
-              <a href="#" className="flex items-center space-x-2">
-                <span>Framer Motion</span>
-                <TbBrandFramerMotion />
-              </a>
-            </li>
-            <li className="underline-hover">
-              <a href="#" className="flex items-center space-x-2">
-                <span>Figma</span>
-                <CgFigma />
-              </a>
-            </li>
+            {tools.map(tool =>
+              <li key={tool.id} className="underline-hover">
+                <a href="#" className="flex items-center space-x-2">
+                  <span>{tool.title}</span>
+                  {tool.icon}
+                </a>
+              </li>
+            )}
           </ul>
         </section>
       </article>

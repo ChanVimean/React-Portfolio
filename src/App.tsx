@@ -1,6 +1,7 @@
 import Footer from "./components/Footer"
 import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
+import Skill from "./pages/Skill"
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
 
       <main>
         <Home />
+        <Skill />
       </main>
 
       <footer className="relative">
