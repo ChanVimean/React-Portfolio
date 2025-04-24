@@ -30,7 +30,7 @@ const Skill = () => {
   ]
 
   return (
-    <div className="w-full h-auto flex flex-col items-center space-y-4 bg-blue-950
+    <div className="w-full h-auto flex flex-col items-center space-y-4 bg-slate-950
       px-4 py-16
       md:p-16
       lg:px-32 lg:py-24"
@@ -69,8 +69,8 @@ const Skill = () => {
             </CarouselItem>
           )}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="text-black hover:bg-slate-300 active:bg-slate-200 duration-150 ease-in-out cursor-pointer" />
+        <CarouselNext className="text-black hover:bg-slate-300 active:bg-slate-200 duration-150 ease-in-out cursor-pointer" />
       </Carousel>
 
     </div>

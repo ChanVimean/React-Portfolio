@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Sabay News Clone",
+    "image": "firstProject.png",
+    "date": "March 12 2025",
+    "host": "Vercel",
+    "desc": "My first project when I started explore web tech",
+    "link": "https://first-front-end-sandy.vercel.app"
+  },
+  {
+    "id": 2,
+    "title": "Electronic Store",
+    "image": "",
+    "date": "",
+    "host": "Vercel",
+    "desc": "",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "title": "Electronic Store",
+    "image": "",
+    "date": "",
+    "host": "Vercel",
+    "desc": "",
+    "link": ""
+  }
+]
