@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useSkeleton from "../hook/useSkeleton";
 import { Skeleton } from "./ui/skeleton";
 
@@ -24,6 +25,11 @@ const GridCard: React.FC<GridCardInterface> = ({
   desc,
   link,
 }) => {
+
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+  const handleMore = () => setIsExpanded(prev => !prev);
+
   return (
     <div
       className="relative rounded-xl overflow-hidden group bg-slate-800 shadow-md
@@ -61,7 +67,16 @@ const GridCard: React.FC<GridCardInterface> = ({
             <span className="me-1 underline">Hosted:</span>
             {host}
           </p>
-          <p className="text-sm mt-2">{desc}</p>
+          <div className={`text-sm mt-2 scrollable-desc ${isExpanded ? "expanded" : ""}`}>
+            <p>{desc}</p>
+          </div>
+          <span
+            className="more-link"
+            onClick={handleMore}
+            style={{ display: desc.length > 100 ? "block" : "none" }} // Only show 'more' if the description is long
+          >
+            {isExpanded ? "…less" : "…more"}
+          </span>
         </article>
 
         <div>

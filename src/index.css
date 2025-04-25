@@ -91,6 +91,29 @@
   box-shadow: 0.05em 0.05em #5566c2;
 }
 
+/* ? GridBox Dynamic Description Scroll */
+.scrollable-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+}
+
+.more-link {
+  display: block;
+  text-align: end;
+  color: oklch(90.1% 0.058 230.902);
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+  overflow: visible;
+}
+
 /* ! Shadcn ui properties */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

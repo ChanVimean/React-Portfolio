@@ -6,7 +6,7 @@
     "image": "firstProject.png",
     "date": "March 12 2024",
     "host": "Vercel",
-    "desc": "My first project when I started explore web tech",
+    "desc": "This was my very first web project when I started diving into web development. Built as a static site with no frameworks and no responsive design, I created it overnight as a simple clone of a news site to get a feel for the basics of HTML and CSS. A humble beginning, but the foundation for everything I would learn afterward.",
     "link": "https://first-front-end-sandy.vercel.app"
   },
   {
@@ -16,7 +16,7 @@
     "image": "thirdProject.png",
     "date": "January 24 2025",
     "host": "Vercel",
-    "desc": "React project with JSON Server",
+    "desc": "After learning React.js, I decided to apply my knowledge and build a small e-commerce site for electronics. This project was powered by React and JSON Server, with a clean and functional UI that I’m proud of. It was my first time working with dynamic data and APIs, and I used this project to improve my skills in managing state, components, and asynchronous data fetching.",
     "link": ""
   },
   {
@@ -26,7 +26,7 @@
     "image": "secondProject.png",
     "date": "February 10 2025",
     "host": "Vercel",
-    "desc": "A react mimick in pure JavaScript also one of my university project",
+    "desc": "The 'Movie Stream' project was probably the craziest idea I've had. The challenge was that the framework I was working within for my university project was restrictive, so I decided to mimic React.js in pure JavaScript. I used JSON Server as a trick to simulate a full-stack experience with a fake backend. It was a fun yet overly complicated solution, but it helped me understand how frameworks like React operate under the hood. Not to mention, it was a solid learning experience in working around limitations.",
     "link": "https://movie-stream-gilt-two.vercel.app"
   },
   {
@@ -36,7 +36,7 @@
     "image": "forthProject.png",
     "date": "February 25 2025",
     "host": "Vercel",
-    "desc": "Next JS Full-Stack",
+    "desc": "For this project, I switched gears and moved to Next.js and Express for a more robust full-stack experience. 'Hana Movie' is a movie streaming site, but unfortunately, it wasn't completed as I faced some technical hurdles. Despite this, I was able to create a beautiful UI with a clean skeleton layout. While the project didn’t reach full functionality, it taught me a lot about full-stack development and handling server-side logic in Next.js, and it's still a work in progress.",
     "link": "https://hana-anime.vercel.app"
   },
   {
@@ -46,7 +46,7 @@
     "image": "fifthProject.png",
     "date": "April 2025",
     "host": "Vercel",
-    "desc": "React TypeScript",
+    "desc": "And here it is – my current portfolio! After running out of project ideas, I decided to focus on building this site to showcase my work and skills. It's built with React and TypeScript, and I've incorporated the knowledge I gained from my previous projects. This is an ongoing project where I'll continue to add new features and improvements as I grow and learn more. It's also a reflection of how far I've come as a developer.",
     "link": "https://react-portfolio-two-khaki.vercel.app"
   }
 ]
