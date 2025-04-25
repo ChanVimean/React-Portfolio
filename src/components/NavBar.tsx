@@ -3,7 +3,10 @@ import SocialLink from "./SocialLink";
 
 const NavBar = () => {
   return (
-    <div className="flex absolute z-50 w-full items-center justify-between px-4 md:px-12 lg:px-32 py-4">
+    <div className="flex fixed z-50 w-full items-center justify-between
+    bg-black/25 backdrop-blur-md
+      px-4 py-2 md:px-12 lg:px-32 lg:py-4"
+    >
       <h1 className="font-semibold text-xl md:text-2xl lg:text-4xl">
         Rok Rak Dev
       </h1>
@@ -21,8 +24,8 @@ const NavBar = () => {
           </li>
         </ul>
 
-        <section className="hidden md:block">
-          <SocialLink  />
+        <section className="hidden lg:block">
+          <SocialLink />
         </section>
 
         <button

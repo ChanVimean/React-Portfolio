@@ -15,7 +15,7 @@ const Home = () => {
     const handelScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handelScroll);
     return () => window.removeEventListener("scroll", handelScroll);
-  }, [])
+  }, []);
 
   return (
     <div className="w-full h-screen relative overflow-hidden">
@@ -25,11 +25,11 @@ const Home = () => {
 
       <article
         className="flex flex-col space-y-10 h-full
-        md:w-3/4 lg:w-1/2
+        md:w-3/4 lg:w-2/3
         items-start justify-center absolute z-20
         px-6 md:px-16 lg:px-32"
       >
-        <h1 className="font-semibold text-5xl">
+        <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl">
           <span>Hi! </span>
           {isLoading ? (
             <Skeleton className="w-[300px] md:w-[500px] h-10 bg-gray-400" />
@@ -48,13 +48,16 @@ const Home = () => {
         {isLoading ? (
           <Skeleton className="w-full md:w-[400px] h-20 bg-gray-500" />
         ) : (
-          <p className="text-slate-200 text-lg md:bg-none">
+          <p className="text-slate-200 md:bg-none text-lg md:text-xl lg:text-2xl">
             I explore the creative universe of web development — blending
             design, code, and motion into sleek digital experiences that are out
             of this world.
           </p>
         )}
-        <button className="contactButton" onClick={() => ScrollTo("contact")}>
+        <button
+          onClick={() => ScrollTo("contact")}
+          className="contactButton text-md md:text-lg lg:text-xl"
+        >
           {isLoading ? (
             <Skeleton className="w-[120px]" />
           ) : (
@@ -63,7 +66,7 @@ const Home = () => {
           <FaArrowRight className="iconButton" />
         </button>
 
-        <section className="block md:hidden">
+        <section className="block lg:hidden">
           <SocialLink />
         </section>
       </article>

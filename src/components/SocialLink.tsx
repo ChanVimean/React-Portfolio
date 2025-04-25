@@ -9,12 +9,12 @@ type listLinksType = {
 const listLinks: listLinksType[] = [
   { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/chan-vimean" },
   { icon: <FaGithubSquare />, link: "https://github.com/ChanVimean" },
-  { icon: <FaTelegram />, link: "https://t.me/chanvimean9" },
+  { icon: <FaTelegram />, link: "https://t.me/chanvimean9" }
 ];
 
 const SocialLink = () => {
   return (
-    <ul className="flex space-x-4 text-3xl">
+    <ul className="flex space-x-4 text-3xl md:text-4xl lg:text-3xl">
       {listLinks.map((list, index) => (
         <li
           key={index}
