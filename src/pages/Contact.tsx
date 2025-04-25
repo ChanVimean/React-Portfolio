@@ -26,7 +26,6 @@ const formSchema = z.object({
 type ContactFormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
-
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,7 +34,7 @@ const Contact = () => {
       email: "",
       title: "",
       message: "",
-      time: ""
+      time: "",
     },
   });
 
@@ -46,14 +45,14 @@ const Contact = () => {
   const onSubmite = async (data: ContactFormValues) => {
     // ? Update Message Length
     const currentTime = new Date().toLocaleDateString();
-    const fullData = {...data, time: currentTime};
+    const fullData = { ...data, time: currentTime };
 
     const templateParams = {
       name: `${fullData.firstName} ${fullData.lastName}`,
       email: fullData.email,
       title: fullData.title,
       message: fullData.message,
-      time: fullData.time
+      time: fullData.time,
     };
 
     try {
@@ -69,9 +68,8 @@ const Contact = () => {
       alert("Custom success");
     } catch (error) {
       console.error("Email send failed", error);
-      alert("Failed to send message. Try again later.")
+      alert("Failed to send message. Try again later.");
     }
-
   };
 
   return (
@@ -183,7 +181,8 @@ const Contact = () => {
                       placeholder="Your message..."
                       {...field}
                     />
-                    <p className={`text-sm text-right mt-1
+                    <p
+                      className={`text-sm text-right mt-1
                       ${remaining < 0 ? "text-amber-500" : "text-gray-300"}`}
                     >
                       {messageLength}/{maxMessageLength}

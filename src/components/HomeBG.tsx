@@ -10,7 +10,8 @@ const HeroContainer = () => {
       />
 
       {/* Astronaut */}
-      <div className="absolute top-1/2 left-[42%] sm:left-[44%] md:left-1/2 transform -translate-x-1/2 -translate-y-[35%] z-10
+      <div
+        className="absolute top-1/2 left-[42%] sm:left-[44%] md:left-1/2 transform -translate-x-1/2 -translate-y-[35%] z-10
         w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"
       >
         <img
@@ -29,8 +30,8 @@ const HeroContainer = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const HomeBG = () => {
   return (
@@ -61,8 +62,8 @@ const HomeBG = () => {
         transition={{
           duration: 2,
           repeat: Infinity,
-          repeatType: 'loop',
-          ease: 'easeInOut'
+          repeatType: "loop",
+          ease: "easeInOut",
         }}
         className="absolute top-1/2 transform -translate-y-1/2 z-0
           w-[340px] h-[340px]

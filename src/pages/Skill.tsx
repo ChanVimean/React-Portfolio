@@ -1,22 +1,34 @@
-import { FaBootstrap, FaReact } from "react-icons/fa"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../components/ui/carousel"
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar"
-import 'react-circular-progressbar/dist/styles.css'
-import { SiAdobephotoshop, SiAdobepremierepro, SiExpress } from "react-icons/si"
-import { BiLogoTypescript } from "react-icons/bi"
-import { CgFigma } from "react-icons/cg"
-import { RiTailwindCssFill } from "react-icons/ri"
-import { JSX } from "react"
+import { FaBootstrap, FaReact } from "react-icons/fa";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import {
+  SiAdobephotoshop,
+  SiAdobepremierepro,
+  SiExpress,
+} from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
+import { CgFigma } from "react-icons/cg";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { JSX } from "react";
+import { Skeleton } from "../components/ui/skeleton";
+import useSkeleton from "../hook/useSkeleton";
 
 type skillTreeTypes = {
-  id: number
-  title: string
-  percentage: number
-  icon: JSX.Element
-}
-
+  id: number;
+  title: string;
+  percentage: number;
+  icon: JSX.Element;
+};
 
 const Skill = () => {
+  const isLoading = useSkeleton();
 
   const skillTree: skillTreeTypes[] = [
     { id: 1, title: "React", percentage: 85, icon: <FaReact /> },
@@ -25,27 +37,36 @@ const Skill = () => {
     { id: 4, title: "Figma", percentage: 90, icon: <CgFigma /> },
     { id: 5, title: "Tailwind", percentage: 85, icon: <RiTailwindCssFill /> },
     { id: 6, title: "Bootstrap", percentage: 80, icon: <FaBootstrap /> },
-    { id: 7, title: "Premier Pro", percentage: 60, icon: <SiAdobepremierepro /> },
-    { id: 8, title: "Photoshop", percentage: 40, icon: <SiAdobephotoshop /> }
-  ]
+    {
+      id: 7,
+      title: "Premier Pro",
+      percentage: 60,
+      icon: <SiAdobepremierepro />,
+    },
+    { id: 8, title: "Photoshop", percentage: 40, icon: <SiAdobephotoshop /> },
+  ];
 
   return (
-    <div className="w-full h-auto flex flex-col items-center space-y-4 bg-slate-950
+    <div
+      className="w-full h-auto flex flex-col items-center space-y-4 bg-slate-950
       px-4 py-16
       md:p-16
       lg:px-32 lg:py-24"
     >
-
       <h1 className="text-xl md:text-3xl font-semibold">My Skills</h1>
 
-      <p className="text-center text-md md:text-lg">
-        Inspired by design, driven by code. These are the technologies
-        I use to shape the digital experience I imagine.
-      </p>
+      {isLoading ? (
+        <Skeleton className="w-full md:w-5/6 lg:w-3/5 h-20 md:h-16 lg:h-8 bg-blue-950" />
+      ) : (
+        <p className="text-center text-md md:text-lg">
+          Inspired by design, driven by code. These are the technologies I use to
+          shape the digital experience I imagine.
+        </p>
+      )}
 
       <Carousel className="w-2/3 md:w-5/6 lg:max-w-screen-lg">
         <CarouselContent>
-          {skillTree.map(skill =>
+          {skillTree.map((skill) => (
             <CarouselItem
               key={skill.id}
               className="basis-1/1 md:basis-1/2 lg:basis-1/3
@@ -67,14 +88,13 @@ const Skill = () => {
                 <li>{skill.icon}</li>
               </ul>
             </CarouselItem>
-          )}
+          ))}
         </CarouselContent>
         <CarouselPrevious className="text-black hover:bg-slate-300 active:bg-slate-200 duration-150 ease-in-out cursor-pointer" />
         <CarouselNext className="text-black hover:bg-slate-300 active:bg-slate-200 duration-150 ease-in-out cursor-pointer" />
       </Carousel>
-
     </div>
-  )
-}
+  );
+};
 
-export default Skill
+export default Skill;
