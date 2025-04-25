@@ -33,16 +33,22 @@ const HeroContainer = () => {
   );
 };
 
-const HomeBG = () => {
+const HomeBG = ({ scrollY }: { scrollY: number }) => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Image */}
-      <picture className="absolute w-full h-full z-0">
+      <picture
+        style={{
+          transform: `translateY(${scrollY * 0.7}px)`,
+          willChange: "transform"
+        }}
+        className="absolute w-full h-[120vh] top-[-10vh] z-0"
+      >
         <source srcSet="/Dark.avif" type="image/avif" />
         <img
           src="/DarkSpace.jpg"
           alt="Space"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-fill"
         />
       </picture>
 

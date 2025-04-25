@@ -25,7 +25,7 @@ const Projects = () => {
   const isLoading = useSkeleton();
 
   const tabs: TabsType[] = [
-    { title: "Web Dev", key: "web" },
+    { title: "Website", key: "web" },
     { title: "UX/UI", key: "uxui" },
     { title: "Mobile", key: "mobile" },
   ];
@@ -82,12 +82,12 @@ const Projects = () => {
             <button
               type="button"
               onClick={() => setActiveTab(tab.key)}
-              className={`rounded-full font-semibold duration-300 ease-in-out cursor-pointer border
+              className={`rounded-full font-semibold duration-300 ease-in-out cursor-pointer border-2
                 text-md md:text-lg lg:text-xl
                 px-5 py-1.5 md:px-12 md:py-3 lg:px-20 lg:py-4
                 ${
                   activeTab === tab.key
-                    ? "bg-gradient-to-r from-red-600 via-blue-700 to-purple-700 shadow-md"
+                    ? "bg-blue-900/75 shadow-md"
                     : "bg-black/10 hover:bg-white/20"
                 }`}
             >

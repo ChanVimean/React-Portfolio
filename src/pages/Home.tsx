@@ -4,15 +4,23 @@ import { Typewriter } from "react-simple-typewriter";
 import ScrollTo from "../utils/ScrollTo";
 import { Skeleton } from "../components/ui/skeleton";
 import useSkeleton from "../hook/useSkeleton";
-
+import SocialLink from "../components/SocialLink";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const isLoading = useSkeleton();
+  const [scrollY, setScrollY] = useState<number>(0);
+
+  useEffect(() => {
+    const handelScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handelScroll);
+    return () => window.removeEventListener("scroll", handelScroll);
+  }, [])
 
   return (
-    <div className="w-full h-screen relative">
+    <div className="w-full h-screen relative overflow-hidden">
       <aside className="absolute inset-0 z-0">
-        <HomeBG />
+        <HomeBG scrollY={scrollY} />
       </aside>
 
       <article
@@ -54,6 +62,10 @@ const Home = () => {
           )}
           <FaArrowRight className="iconButton" />
         </button>
+
+        <section className="block md:hidden">
+          <SocialLink />
+        </section>
       </article>
     </div>
   );

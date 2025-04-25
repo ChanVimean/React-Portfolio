@@ -125,9 +125,16 @@ const Footer = () => {
                     </li>
                   ))
               : // Render actual `quickTo` items when not loading
-                quickTo.map((contact, index) => (
+                contacts.map((contact, index) => (
                   <li key={index} onClick={() => ScrollTo(contact.link)}>
-                    <p className="underline-hover">{contact.title}</p>
+                    <a
+                      href={contact.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline-hover"
+                    >
+                      {contact.title}
+                    </a>
                   </li>
                 ))}
           </ul>

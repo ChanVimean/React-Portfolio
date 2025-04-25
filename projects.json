@@ -44,7 +44,7 @@
     "title": "React Portfolio",
     "category": "web",
     "image": "fifthProject.png",
-    "date": "April 2025",
+    "date": "April 25 2025",
     "host": "Vercel",
     "desc": "And here it is – my current portfolio! After running out of project ideas, I decided to focus on building this site to showcase my work and skills. It's built with React and TypeScript, and I've incorporated the knowledge I gained from my previous projects. This is an ongoing project where I'll continue to add new features and improvements as I grow and learn more. It's also a reflection of how far I've come as a developer.",
     "link": "https://react-portfolio-two-khaki.vercel.app"
