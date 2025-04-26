@@ -74,8 +74,7 @@ const Contact = () => {
 
   return (
     <div
-      style={{ backgroundImage: "url('/GradientForm.avif')" }}
-      className="w-full h-auto flex items-center bg-cover bg-center
+      className="w-full h-auto flex items-center bg-cover bg-center bg-slate-900
         flex-col lg:flex-row
         p-8 py-16 md:px-24
         lg:py-20 lg:px-32"
@@ -105,7 +104,7 @@ const Contact = () => {
                   <FormLabel>First Name</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      className="bg-white/90 text-black placeholder-gray-600 rounded-none"
                       placeholder="First Name"
                       {...field}
                     />
@@ -121,7 +120,7 @@ const Contact = () => {
                   <FormLabel>Last Name</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      className="bg-white/90 text-black placeholder-gray-600 rounded-none"
                       placeholder="Last Name"
                       {...field}
                     />
@@ -141,7 +140,7 @@ const Contact = () => {
                   <FormLabel>Title</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      className="bg-white/90 text-black placeholder-gray-600 rounded-none"
                       placeholder="Title"
                       {...field}
                     />
@@ -157,7 +156,7 @@ const Contact = () => {
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      className="bg-white/90 text-black placeholder-gray-600 rounded-none"
                       placeholder="example@gmail.com"
                       {...field}
                     />
@@ -177,7 +176,7 @@ const Contact = () => {
                 <FormControl>
                   <div>
                     <Textarea
-                      className="bg-white/80 text-black placeholder-gray-600 rounded-none"
+                      className="bg-white/90 text-black placeholder-gray-600 rounded-none"
                       placeholder="Your message..."
                       {...field}
                     />
@@ -194,12 +193,14 @@ const Contact = () => {
           />
 
           {/* Submite Button */}
-          <button
-            type="submit"
-            className="custom-white-btn text-black font-semibold"
-          >
-            Submit
-          </button>
+          <div className="w-full flex justify-center lg:justify-start">
+            <button
+              type="submit"
+              className="custom-white-btn text-black font-semibold"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </Form>
     </div>

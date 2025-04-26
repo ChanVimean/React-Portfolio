@@ -3,7 +3,7 @@ import { CgFigma } from "react-icons/cg";
 import { FaReact, FaYoutube } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import Subscribe from "./Subscribe";
+// import Subscribe from "./Subscribe";
 import { SiShadcnui } from "react-icons/si";
 import { JSX } from "react";
 import ScrollTo from "../utils/ScrollTo";
@@ -31,6 +31,7 @@ const Footer = () => {
     { title: "Skills", link: "skills" },
     { title: "Projects", link: "projects" },
     { title: "Contact", link: "contact" },
+    { title: "Resume", link: "resume" },
   ];
 
   const contacts: contactType[] = [
@@ -62,9 +63,9 @@ const Footer = () => {
 
   return (
     <div className="relative w-full bg-slate-900">
-      <aside className="absolute w-full -top-12 left-1/2 transform -translate-x-1/2 z-10">
+      {/* <aside className="absolute w-full -top-12 left-1/2 transform -translate-x-1/2 z-10">
         <Subscribe />
-      </aside>
+      </aside> */}
 
       <article
         className="grid

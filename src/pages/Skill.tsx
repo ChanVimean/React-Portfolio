@@ -72,7 +72,7 @@ const Skill = () => {
               className="basis-1/1 md:basis-1/2 lg:basis-1/3
                 flex flex-col space-y-4 items-center justify-center py-6"
             >
-              <div className="w-28">
+              <div className="w-28 cursor-pointer transition-transform duration-500 hover:rotate-180">
                 <CircularProgressbar
                   value={skill.percentage}
                   text={`${skill.percentage}%`}
