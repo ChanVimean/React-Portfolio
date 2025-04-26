@@ -11,6 +11,7 @@ import {
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import emailjs from "emailjs-com";
+import { lazy, Suspense } from "react";
 
 const maxMessageLength: number = 200;
 
@@ -24,6 +25,9 @@ const formSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof formSchema>;
+
+// ! Performance Optimization + Lazy Loading
+const AngryContact = lazy(() => import("../components/AngryContact"));
 
 const Contact = () => {
   const form = useForm({
@@ -79,12 +83,18 @@ const Contact = () => {
         p-8 py-16 md:px-24
         lg:py-20 lg:px-32"
     >
-      <section className="w-full lg:w-1/2 h-auto">
-        <img
-          src="Service.png"
-          alt="Banner"
-          className="w-[90%] h-[90%] object-cover"
-        />
+      <section className="relative w-full lg:w-1/2 h-auto flex justify-center items-center overflow-hidden">
+        <Suspense
+          fallback={
+            <img
+              src="Service.png"
+              alt="Banner"
+              className="object-cover w-[90%] h-[90%]"
+            />
+          }
+        >
+          <AngryContact />
+        </Suspense>
       </section>
 
       <Form {...form}>

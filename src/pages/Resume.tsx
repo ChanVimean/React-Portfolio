@@ -1,5 +1,11 @@
 import { JSX, ReactElement, useEffect, useState } from "react";
-import { FaBootstrap, FaJsSquare, FaNodeJs, FaPhoneAlt, FaReact } from "react-icons/fa";
+import {
+  FaBootstrap,
+  FaJsSquare,
+  FaNodeJs,
+  FaPhoneAlt,
+  FaReact,
+} from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { LuMapPinned } from "react-icons/lu";
 import { LiaPhoneSolid } from "react-icons/lia";
@@ -7,10 +13,16 @@ import { BsFillPuzzleFill } from "react-icons/bs";
 import { IoSchool } from "react-icons/io5";
 import { GiOpenBook } from "react-icons/gi";
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiExpress, SiMysql, SiMongodb, SiCanva, SiAdobepremierepro, SiAdobephotoshop } from "react-icons/si";
+import {
+  SiExpress,
+  SiMysql,
+  SiMongodb,
+  SiCanva,
+  SiAdobepremierepro,
+  SiAdobephotoshop,
+} from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { CgFigma } from "react-icons/cg";
-
 
 // TODO Types
 type ListItemType = {
@@ -20,9 +32,9 @@ type ListItemType = {
 };
 
 type SkillGroup = {
-  text: string
-  icons: ReactElement[]
-}
+  text: string;
+  icons: ReactElement[];
+};
 
 type DetailType = {
   major: string;
@@ -39,17 +51,6 @@ type ReferenceType = {
 };
 
 const Resume = () => {
-  // ? Dynamic Scroll
-  const [scrollY, setScrollY] = useState<number>(0);
-  const handleScroll = () => setScrollY(window.scrollY);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const backgroundPosition = `center ${scrollY * 0.1}px`; // TODO Control Amount
-
   // ? Detail for Extraction - Map()
   const contactList: ListItemType[] = [
     { text: "089 804 644", icon: <LiaPhoneSolid /> },
@@ -63,23 +64,30 @@ const Resume = () => {
   const skillList: SkillGroup[] = [
     {
       text: "Stack",
-      icons: [<FaReact />, <FaJsSquare />, <BiLogoTypescript />, <SiExpress />, <FaNodeJs />]
+      icons: [
+        <FaReact />,
+        <FaJsSquare />,
+        <BiLogoTypescript />,
+        <SiExpress />,
+        <FaNodeJs />,
+      ],
     },
     {
       text: "Styling",
-      icons: [<RiTailwindCssFill />, <FaBootstrap />]
+      icons: [<RiTailwindCssFill />, <FaBootstrap />],
     },
     {
       text: "Database",
-      icons: [ <SiMysql />, <SiMongodb />]
+      icons: [<SiMysql />, <SiMongodb />],
     },
     {
       text: "UX/UI Tools",
-      icons: [<CgFigma />]
+      icons: [<CgFigma />],
     },
     {
       text: "Editing Tools",
-      icons: [<SiAdobepremierepro  />, <SiAdobephotoshop />, <SiCanva />]},
+      icons: [<SiAdobepremierepro />, <SiAdobephotoshop />, <SiCanva />],
+    },
   ];
 
   const educationList: DetailType[] = [
@@ -87,37 +95,41 @@ const Resume = () => {
       major: "Bachelor of Information Technology",
       school: "Royal University of Law and Economics (RULE)",
       date: "2024 - Present",
-      detail: "Sophomore majoring in IT, focusing on Front-End and Full-Stack development, with a passion for innovative tech solutions."
+      detail:
+        "Sophomore majoring in IT, focusing on Front-End and Full-Stack development, with a passion for innovative tech solutions.",
     },
     {
       major: "English GEP 12 and Diploma",
       school: "Australian Centre for Education (ACE)",
       date: "2019 - 2023",
-      detail: "Completed GEP 12 and Diploma in Reading at ACE. Achieved IELTS Band 5.5, demonstrating strong English proficiency."
+      detail:
+        "Completed GEP 12 and Diploma in Reading at ACE. Achieved IELTS Band 5.5, demonstrating strong English proficiency.",
     },
   ];
-  
+
   const courseList: DetailType[] = [
     {
       major: "Full-Stack Web Development",
       school: "Etec Center",
       date: "2023 - 2024",
-      detail: "Learned Front-End basics, RESTful APIs, and databases with HTML, CSS, JS, Bootstrap, Express, Flask, and MySQL."
+      detail:
+        "Learned Front-End basics, RESTful APIs, and databases with HTML, CSS, JS, Bootstrap, Express, Flask, and MySQL.",
     },
     {
       major: "Web Framework (React JS)",
       school: "Etec Center",
       date: "2024 - 2025",
-      detail: "Built apps with React JS and JSON Server, focusing on state management, Tailwind CSS, Bootstrap, and both old and new React versions."
+      detail:
+        "Built apps with React JS and JSON Server, focusing on state management, Tailwind CSS, Bootstrap, and both old and new React versions.",
     },
     {
       major: "UX/UI Design",
       school: "ICT Professional Training Center",
       date: "2025 - Present",
-      detail: "Designed interfaces with Figma, focusing on usability, accessibility, and modern UX/UI principles."
-    }
+      detail:
+        "Designed interfaces with Figma, focusing on usability, accessibility, and modern UX/UI principles.",
+    },
   ];
-  
 
   const referenceList: ReferenceType[] = [
     {
@@ -134,15 +146,28 @@ const Resume = () => {
     },
   ];
 
+  // ? Dynamic Scroll
+  const [scrollY, setScrollY] = useState<number>(0);
+  const handleScroll = () => setScrollY(window.scrollY);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const backgroundPosition = `center ${scrollY * 0.1}px`; // TODO Control Amount
+
   return (
     <div
       style={{
-        backgroundImage: "url('UranusRing.jpg')",
+        backgroundImage: "url('monochrome-realistic.jpg')",
         backgroundPosition: backgroundPosition,
         backgroundAttachment: "fixed",
-        backgroundSize: "fill",
+        backgroundSize: "cover",
+        backgroundBlendMode: "multiply",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
       }}
-      className="flex flex-col lg:flex-row w-full h-auto
+      className="w-full h-auto flex flex-col items-center
         px-4 py-16
         md:p-16
         lg:px-32 lg:py-24"
@@ -235,9 +260,9 @@ const Resume = () => {
               <li key={index} className="flex items-center space-x-2">
                 <h1 className="text-xl">{skill.text}:</h1>
                 <div className="flex items-center space-x-2 text-2xl">
-                  {skill.icons.map((icon, i) =>
+                  {skill.icons.map((icon, i) => (
                     <span key={i}>{icon}</span>
-                  )}
+                  ))}
                 </div>
               </li>
             ))}

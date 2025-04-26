@@ -46,7 +46,7 @@ const Projects = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => removeEventListener("scrollh", handleScroll);
+    return () => removeEventListener("scroll", handleScroll);
   }, []);
 
   const backgroundPosition = `center ${scrollY * 0.1}px`; // TODO Control Amount
