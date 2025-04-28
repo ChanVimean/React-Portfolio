@@ -9,11 +9,10 @@ import Skill from "./pages/Skill";
 
 const App = () => {
 
-  const version: string = "V1.2.0";
+  const version: string = "V1.2.1";
 
   const features: string[] = [
-    "🚀 New Modern UI Redesign",
-    "🌐 Added Social Media Links",
+    "💬 Improved Visual Readability",
     "🛠️ Minor Bug Fixes and Optimizations",
     "🎨 Improved Dynamic Background",
     "🐣 Something mysterious awaits... 👀",

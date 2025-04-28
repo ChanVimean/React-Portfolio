@@ -96,7 +96,7 @@ const HomeBG = ({ scrollY }: { scrollY: number }) => {
       </picture>
 
       {/* Uranus - Top Center */}
-      <div className="absolute top-24 left-1/2 transform -translate-x-1/2 z-10 w-10 h-10 lg:w-12 lg:h-12">
+      <div className="absolute top-24 left-1/2 transform -translate-x-1/2 z-0 w-10 h-10 lg:w-12 lg:h-12">
         <img
           src="/uranus.png"
           alt="Uranus"

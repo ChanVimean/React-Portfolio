@@ -176,9 +176,11 @@ const Resume = () => {
         {/* About Me */}
         <section className="flex flex-col md:flex-row justify-between">
           <article className="w-full md:w-1/2 lg:w-2/3 space-y-4">
-            <h1 className="font-bold text-5xl">Chan Vimean</h1>
-            <h3 className="font-medium">Web Developer & UX/UI Designer</h3>
-            <p>
+            <h1 className="font-bold text-4xl lg:text-5xl">Chan Vimean</h1>
+            <h3 className="font-medium text-xl lg:text-2xl">
+              Web Developer & UX/UI Designer
+            </h3>
+            <p className="text-md">
               Creative and problem-solving IT student with a passion for
               Front-End development and UX/UI design. Skilled in JavaScript,
               Figma, and Full-Stack tech, always prioritizing user experience
@@ -233,15 +235,15 @@ const Resume = () => {
 
         {/* Contact */}
         <section>
-          <h2 className="flex items-center space-x-3 lg:space-x-6 font-semibold text-2xl">
+          <h2 className="flex items-center space-x-3 lg:space-x-6 font-semibold text-3xl">
             <FaPhoneAlt />
             <span>Contact</span>
           </h2>
-          <hr className="mb-4" />
-          <ul>
+          <hr className="my-4" />
+          <ul className="text-lg">
             {contactList.map((contact, index) => (
               <li key={index} className="flex items-center space-x-2">
-                <span className="text-lg">{contact.icon}</span>
+                <span className="text-2xl">{contact.icon}</span>
                 <span>{contact.text}</span>
               </li>
             ))}
@@ -250,16 +252,16 @@ const Resume = () => {
 
         {/* Skills */}
         <section>
-          <h2 className="flex items-center space-x-6 font-semibold text-2xl">
+          <h2 className="flex items-center space-x-6 font-semibold text-3xl">
             <BsFillPuzzleFill />
             <span>Skills</span>
           </h2>
-          <hr className="mb-4" />
+          <hr className="my-4" />
           <ul className="space-y-1">
             {skillList.map((skill, index) => (
               <li key={index} className="flex items-center space-x-2">
-                <h1 className="text-xl">{skill.text}:</h1>
-                <div className="flex items-center space-x-2 text-2xl">
+                <h1 className="text-xl md:text-2xl">{skill.text}:</h1>
+                <div className="flex items-center space-x-2 text-2xl md:text-3xl">
                   {skill.icons.map((icon, i) => (
                     <span key={i}>{icon}</span>
                   ))}
@@ -272,13 +274,13 @@ const Resume = () => {
         {/* Education & Courses */}
         <section className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:gap-8">
           <article className="w-full lg:w-1/2">
-            <h1 className="flex items-center space-x-4 font-semibold text-2xl">
+            <h1 className="flex items-center space-x-4 font-semibold text-3xl">
               <span>
                 <IoSchool />
               </span>
               <span>Education</span>
             </h1>
-            <hr className="mb-4" />
+            <hr className="my-4" />
             <ul className="space-y-8">
               {educationList.map((edu, index) => (
                 <li key={index}>
@@ -295,13 +297,13 @@ const Resume = () => {
             </ul>
           </article>
           <article className="w-full lg:w-1/2">
-            <h1 className="flex items-center space-x-4 font-semibold text-2xl">
+            <h1 className="flex items-center space-x-4 font-semibold text-3xl">
               <span>
                 <IoSchool />
               </span>
               <span>Courses</span>
             </h1>
-            <hr className="mb-4" />
+            <hr className="my-4" />
             <ul className="space-y-8">
               {courseList.map((coruse, index) => (
                 <li key={index}>
@@ -321,25 +323,25 @@ const Resume = () => {
 
         {/* References */}
         <section>
-          <h1 className="flex items-center space-x-4 font-semibold text-2xl">
+          <h1 className="flex items-center space-x-4 font-semibold text-3xl">
             <span>
               <GiOpenBook />
             </span>
             <span>References</span>
           </h1>
-          <hr className="mb-4" />
+          <hr className="my-4" />
           <ul className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {referenceList.map((ref, index) => (
               <li key={index} className="p-4 break-words w-full max-w-full">
-                <h2 className="font-bold text-xl">{ref.name}</h2>
-                <h4 className="italic">{ref.job}</h4>
-                <div>
+                <h2 className="font-bold text-2xl">{ref.name}</h2>
+                <h4 className="italic text-lg">{ref.job}</h4>
+                <p className="text-lg">
                   <span className="me-2 font-medium">Phone:</span>
                   <span className="cursor-pointer hover:text-blue-600 active:text-blue-300 duration-150 ease-in-out">
                     {ref.phone}
                   </span>
-                </div>
-                <p>
+                </p>
+                <p className="text-lg">
                   <span className="me-2 font-medium">Email:</span>
                   <span className="cursor-pointer hover:text-blue-600 active:text-blue-300 duration-150 ease-in-out">
                     {ref.email}

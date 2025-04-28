@@ -102,7 +102,7 @@ const Contact = () => {
           onSubmit={form.handleSubmit(onSubmite)}
           className="w-full lg:flex-1 space-y-8 lg:space-y-12 pb-12 lg:pb-0"
         >
-          <h1 className="text-3xl font-semibold">Get In Touch</h1>
+          <h1 className="text-xl md:text-4xl text-center lg:text-start font-semibold">Get In Touch</h1>
 
           {/* 1st: Name -> Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -111,7 +111,7 @@ const Contact = () => {
               name="firstName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>First Name</FormLabel>
+                  <FormLabel className="text-lg md:text-xl">First Name</FormLabel>
                   <FormControl>
                     <Input
                       className="bg-white/90 text-black placeholder-gray-600 rounded-none"
@@ -127,7 +127,7 @@ const Contact = () => {
               name="lastName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Last Name</FormLabel>
+                  <FormLabel className="text-lg md:text-xl">Last Name</FormLabel>
                   <FormControl>
                     <Input
                       className="bg-white/90 text-black placeholder-gray-600 rounded-none"
@@ -147,7 +147,7 @@ const Contact = () => {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel className="text-lg md:text-xl">Title</FormLabel>
                   <FormControl>
                     <Input
                       className="bg-white/90 text-black placeholder-gray-600 rounded-none"
@@ -163,7 +163,7 @@ const Contact = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="text-lg md:text-xl">Email</FormLabel>
                   <FormControl>
                     <Input
                       className="bg-white/90 text-black placeholder-gray-600 rounded-none"
@@ -182,7 +182,7 @@ const Contact = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="text-lg md:text-xl">Message</FormLabel>
                 <FormControl>
                   <div>
                     <Textarea

@@ -64,11 +64,11 @@ const Projects = () => {
         md:p-16
         lg:px-32 lg:py-24"
     >
-      <h1 className="text-xl md:text-3xl font-semibold">Projects</h1>
+      <h1 className="text-2xl md:text-4xl font-semibold">Projects</h1>
       {isLoading ? (
         <Skeleton className="w-full lg:w-5/6 h-20 md:h-16 lg:h-8 bg-slate-700" />
       ) : (
-        <p className="text-center text-md md:text-lg">
+        <p className="text-center text-md md:text-xl">
           Where design meets code, a mix of Front-End builds, Full-Stack
           wor-in-progress, and polished UX/UI projects. Somelive, some orbiting
           soon 🚀.

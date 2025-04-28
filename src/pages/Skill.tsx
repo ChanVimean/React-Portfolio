@@ -55,12 +55,12 @@ const Skill = () => {
       md:p-16
       lg:px-32 lg:py-24"
     >
-      <h1 className="text-xl md:text-3xl font-semibold">My Skills</h1>
+      <h1 className="text-2xl md:text-4xl font-semibold">My Skills</h1>
 
       {isLoading ? (
         <Skeleton className="w-full md:w-5/6 lg:w-3/5 h-20 md:h-16 lg:h-8 bg-blue-950" />
       ) : (
-        <p className="text-center text-md md:text-lg">
+        <p className="text-center text-md md:text-xl">
           Inspired by design, driven by code. These are the technologies I use
           to shape the digital experience I imagine.
         </p>
@@ -81,8 +81,7 @@ const Skill = () => {
               >
                 <div
                   className={`transition-transform duration-300
-                    ${hover === skill.id ? "animate-spin-slow" : ""
-                  }`}
+                    ${hover === skill.id ? "animate-spin-slow" : ""}`}
                 >
                   <CircularProgressbar
                     value={skill.percentage}
@@ -98,7 +97,7 @@ const Skill = () => {
                   {skill.percentage}
                 </div>
               </div>
-              <ul className="flex items-center justify-center space-x-2 text-xl font-semibold">
+              <ul className="flex items-center justify-center space-x-2 text-2xl font-semibold">
                 <li>{skill.title}</li>
                 <li>{skill.icon}</li>
               </ul>
