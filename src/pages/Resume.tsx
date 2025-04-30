@@ -165,7 +165,7 @@ const Resume = () => {
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundBlendMode: "multiply",
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
       }}
       className="w-full h-auto flex flex-col items-center
         px-4 py-16
